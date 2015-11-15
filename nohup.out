@@ -1,0 +1,2386 @@
+45.64.241.41 - - [13/Nov/2015 13:07:55] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:05] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:18] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:19] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:19] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:20] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:20] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:21] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:21] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:21] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:22] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:22] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:22] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:23] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:23] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:23] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:23] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:24] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:24] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:25] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:26] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:26] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:26] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:27] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:27] "POST / HTTP/1.0" 200 -
+Starting HTTP server ...
+URL: http://192.168.43.30:43876
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	1
+projectID: 	1
+dimension: 	 [720,1280]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimens137.189.133.248 - - [13/Nov/2015 15:18:27] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:27] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:27] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:28] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:28] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:28] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:28] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:18:41] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:33:16] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:33:18] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:33:19] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:33:19] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:33:19] "POST / HTTP/1.0" 200 -
+137.189.133.248 - - [13/Nov/2015 15:33:20] "POST / HTTP/1.0" 200 -
+Traceback (most recent call last):
+  File "PortListener.py", line 64, in <module>
+    raise SystemError("Lock file /tmp/clv.pid exist")
+SystemError: Lock file /tmp/clv.pid exist
+123.136.15.84 - - [13/Nov/2015 18:17:25] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:27] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:29] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:31] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:32] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:34] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:37] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:39] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:41] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:43] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:45] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:47] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:49] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:51] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:53] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:55] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:57] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:17:59] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:00] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:00] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:01] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:02] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:02] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:03] "POST / HTTP/1.0" 200 -
+Starting HTTP server ...
+URL: http://192.168.1.2:43876
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 123.136.15.84 - - [13/Nov/2015 18:18:04] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:04] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:05] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:06] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:06] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:07] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:08] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:08] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:09] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:09] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:10] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:11] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:11] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:12] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:13] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:14] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:15] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:16] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:17] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:18] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:19] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:20] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:21] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:22] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:23] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:18:24] "POST / HTTP/1.0" 200 -
+[400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+im123.136.15.84 - - [13/Nov/2015 18:18:26] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:35] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:38] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:40] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:42] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:44] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:45] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:48] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:51] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:52] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:54] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:56] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:29:58] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:00] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:02] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:04] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:06] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:07] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:10] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:11] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:27] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:29] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:30] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:32] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:33] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:35] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:38] "POST / HTTP/1.0" 200 -
+ageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization i123.136.15.84 - - [13/Nov/2015 18:30:39] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:42] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:44] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:46] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:30:48] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:31:09] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 18:31:10] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:30] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:35] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:37] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:38] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:40] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:42] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:44] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:46] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:48] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:50] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:53] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:55] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:57] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:46:59] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:47:01] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:47:02] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:47:09] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:47:34] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:47:35] "POST / HTTP/1.0" 200 -
+s requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following123.136.15.84 - - [13/Nov/2015 19:47:36] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [13/Nov/2015 19:56:57] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:12] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:18] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:23] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:27] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:32] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:37] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:40] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:46] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:50] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:52] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:08:55] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:00] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:05] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:10] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:15] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:20] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:25] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:55] "POST / HTTP/1.0" 200 -
+123.136.15.84 - - [14/Nov/2015 10:09:59] "POST / HTTP/1.0" 200 -
+117.136.40.211 - - [14/Nov/2015 17:54:09] "POST / HTTP/1.0" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+182.239.109.62 - - [14/Nov/2015 19:10:38] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:10:43] "POST / HTTP/1.0" 200 -
+ parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+----------------------------------------
+Exception happened during processing of request from ('117.136.40.211', 27812)
+----------------------------------------
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [182.239.109.62 - - [14/Nov/2015 19:10:48] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:10:51] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:10:53] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:10:56] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:10:58] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:00] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:02] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:04] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:07] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:08] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:10] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:12] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:13] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:14] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:15] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:15] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:16] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:17] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:18] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:19] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:20] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:20] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:21] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:22] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:22] "POST / HTTP/1.0" 200 -
+400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+-----Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 342, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 310, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+182.239.109.62 - - [14/Nov/2015 19:11:28] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:29] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:29] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:30] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:31] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:33] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:34] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:35] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:36] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:37] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:38] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:39] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:40] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:42] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:47] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:49] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:50] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:52] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:54] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:56] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:11:59] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:06] "POST / HTTP/1.0" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+-----------------------------------
+Exception happened during processing of request from ('182.239.109.62', 56457)
+----------------------------------------
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	tract.vtk
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+----------------------------------------
+Exception happened during processing of request from ('182.239.109.62', 32875)
+----------------------------------------
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageI182.239.109.62 - - [14/Nov/2015 19:12:08] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:09] "POST / HTTP/1.0" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+182.239.109.62 - - [14/Nov/2015 19:12:11] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:12] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:14] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:16] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:18] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:19] "POST / HTTP/1.0" 200 -
+182.239.109.62 - - [14/Nov/2015 19:12:23] "POST / HTTP/1.0" 200 -
+Traceback (most recent call last):
+182.239.109.62 - - [14/Nov/2015 19:12:33] "POST / HTTP/1.0" 200 -
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+42.98.173.127 - - [14/Nov/2015 19:23:35] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:38] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:39] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:39] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:40] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:40] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:40] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:40] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:41] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:41] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:41] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:42] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:42] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:42] "POST / HTTP/1.0" 200 -
+D: 	1
+
+----------------------------------------
+Exception happened during processing of request from ('182.239.109.62', 49490)
+----------------------------------------
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+----------------------------------------
+Exception happened during processing of request from ('182.239.109.62', 32912)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('182.239.109.62', 35811)
+----------------------------------------
+Visualization is requested with following parameters 
+ subType: 	VolumeRendering
+parameter: 	None
+subjectID: 	MNI152_T1_1mm.nii.gz
+projectID: 	1
+dimension: 	 [256,256]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageI42.98.173.127 - - [14/Nov/2015 19:23:42] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:43] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:43] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:43] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:44] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:44] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:44] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:44] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:45] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:45] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:45] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:45] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:46] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:46] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:46] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:47] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:47] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:47] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:47] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:48] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:48] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:48] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:49] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:49] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:49] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:49] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:50] "POST / HTTP/1.0" 200 -
+D: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with following parameters 
+ subType: 	Rotation
+parameter: 	[5,5]
+subjectID: 	1
+projectID: 	1
+dimension: 	 [400,400]
+imageID: 	1
+
+Visualization is requested with f42.98.173.127 - - [14/Nov/2015 19:23:50] "POST / HTTP/1.0" 200 -
+42.98.173.127 - - [14/Nov/2015 19:23:50] "POST / HTTP/1.0" 200 -
+210.6.10.152 - - [14/Nov/2015 20:13:07] "POST / HTTP/1.0" 200 -
+210.6.10.163 - - [14/Nov/2015 20:13:37] "POST / HTTP/1.0" 200 -
+210.6.10.150 - - [14/Nov/2015 20:14:39] "POST / HTTP/1.0" 200 -
+210.6.10.174 - - [14/Nov/2015 20:15:04] "POST / HTTP/1.0" 200 -
+210.6.10.171 - - [14/Nov/2015 20:15:42] "POST / HTTP/1.0" 200 -
