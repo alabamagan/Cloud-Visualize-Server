@@ -14,6 +14,147 @@ def VolumeRenderingDTILoader(inVTKPolyDataReader):
     actor.SetMapper(mapper)
     return actor
 
+def VolumeRenderingGPUDICOMLoader(dicomreader):
+
+
+    imcast = vtk.vtkImageCast()
+    imcast.SetInputConnection(dicomreader.GetOutputPort())
+    imcast.SetOutputScalarTypeToUnsignedShort()
+    imcast.ClampOverflowOn()
+
+    opacityTransferFunction = vtk.vtkPiecewiseFunction()
+    opacityTransferFunction.AddPoint(-2048, 0, 0.5, 0)
+    opacityTransferFunction.AddPoint(142.677, 0, 0.5, 0)
+    opacityTransferFunction.AddPoint(145.016, 0.116071, 0.5, 0.26)
+    opacityTransferFunction.AddPoint(192.174, 0.5625, 0.469638, 0.39)
+    opacityTransferFunction.AddPoint(217.24, 0.776786, 0.666667, 0.41)
+    opacityTransferFunction.AddPoint(384.347, 0.830357, 0.5, 0)
+    opacityTransferFunction.AddPoint(3661, 0.830357, 0.5, 0)
+
+    colorTransferFunction = vtk.vtkColorTransferFunction()
+    colorTransferFunction.AddRGBPoint(-2048, 0, 0, 0, 0.5, 0)
+    colorTransferFunction.AddRGBPoint(142.667, 0, 0, 0, 0.5, 0)
+    colorTransferFunction.AddRGBPoint(145.016, 0.615686, 0, 0.156863, 0.5, 0.26)
+    colorTransferFunction.AddRGBPoint(192.174, 0.909804, 0.454902, 0, 0.469638, 0.39)
+    colorTransferFunction.AddRGBPoint(217.24, 0.972549, 0.807843, 0.611765, 0.666667, 0.41)
+    colorTransferFunction.AddRGBPoint(384.347, 0.909804, 0.909804, 1, 0.5, 0)
+    colorTransferFunction.AddRGBPoint(3661, 1, 1, 1, 0.5, 0)
+    colorTransferFunction.ClampingOn()
+    colorTransferFunction.SetColorSpace(1)
+
+    volumeProperty = vtk.vtkVolumeProperty()
+    volumeProperty.SetAmbient(0.2)
+    volumeProperty.SetDiffuse(1)
+    volumeProperty.SetSpecular(0)
+    volumeProperty.SetSpecularPower(1)
+    volumeProperty.DisableGradientOpacityOn()
+    volumeProperty.SetComponentWeight(1, 1)
+    volumeProperty.GetScalarOpacityUnitDistance(0.48117)
+    volumeProperty.SetColor(colorTransferFunction)
+    volumeProperty.ShadeOn()
+    volumeProperty.SetScalarOpacity(opacityTransferFunction)
+    volumeProperty.SetInterpolationTypeToLinear()
+
+    raycast = vtk.vtkVolumeRayCastCompositeFunction()
+    volumeMapper = vtk.vtkGPUVolumeRayCastMapper()
+    volumeMapper.SetInputConnection(imcast.GetOutputPort())
+    volumeMapper.SetBlendModeToComposite()
+    volumeMapper.SetSampleDistance(0.1)
+
+    volume = vtk.vtkVolume()
+    volume.SetMapper(volumeMapper)
+    volume.SetProperty(volumeProperty)
+
+    # === DEBUG TEST ===
+    renderer = vtk.vtkRenderer()
+    renderer.AddVolume(volume)
+    vdisplay = xvfbwrapper.Xvfb()
+    vdisplay.start()
+
+    print "writing"
+    ImageWriter(renderer, outFileName="tmp1")
+    print "write 1..."
+    camera = renderer.GetActiveCamera()
+    camera.Zoom(1.3)
+    camera.Azimuth(40)
+    ImageWriter(renderer, camera=camera, outFileName="tmp2")
+    print "write 2..."
+    renderer.ResetCameraClippingRange()
+    vdisplay.stop()
+    # === DEBUG TEST ===
+    return volume
+
+def VolumeRenderingDICOMLoader(dicomreader):
+
+
+    imcast = vtk.vtkImageCast()
+    imcast.SetInputConnection(dicomreader.GetOutputPort())
+    imcast.SetOutputScalarTypeToUnsignedShort()
+    imcast.ClampOverflowOn()
+
+    opacityTransferFunction = vtk.vtkPiecewiseFunction()
+    opacityTransferFunction.AddPoint(-2048, 0, 0.5, 0)
+    opacityTransferFunction.AddPoint(142.677, 0, 0.5, 0)
+    opacityTransferFunction.AddPoint(145.016, 0.116071, 0.5, 0.26)
+    opacityTransferFunction.AddPoint(192.174, 0.5625, 0.469638, 0.39)
+    opacityTransferFunction.AddPoint(217.24, 0.776786, 0.666667, 0.41)
+    opacityTransferFunction.AddPoint(384.347, 0.830357, 0.5, 0)
+    opacityTransferFunction.AddPoint(3661, 0.830357, 0.5, 0)
+
+    colorTransferFunction = vtk.vtkColorTransferFunction()
+    colorTransferFunction.AddRGBPoint(-2048, 0, 0, 0, 0.5, 0)
+    colorTransferFunction.AddRGBPoint(142.667, 0, 0, 0, 0.5, 0)
+    colorTransferFunction.AddRGBPoint(145.016, 0.615686, 0, 0.156863, 0.5, 0.26)
+    colorTransferFunction.AddRGBPoint(192.174, 0.909804, 0.454902, 0, 0.469638, 0.39)
+    colorTransferFunction.AddRGBPoint(217.24, 0.972549, 0.807843, 0.611765, 0.666667, 0.41)
+    colorTransferFunction.AddRGBPoint(384.347, 0.909804, 0.909804, 1, 0.5, 0)
+    colorTransferFunction.AddRGBPoint(3661, 1, 1, 1, 0.5, 0)
+    colorTransferFunction.ClampingOn()
+    colorTransferFunction.SetColorSpace(1)
+
+    volumeProperty = vtk.vtkVolumeProperty()
+    volumeProperty.SetAmbient(0.2)
+    volumeProperty.SetDiffuse(1)
+    volumeProperty.SetSpecular(0)
+    volumeProperty.SetSpecularPower(1)
+    volumeProperty.DisableGradientOpacityOn()
+    volumeProperty.SetComponentWeight(1, 1)
+    volumeProperty.GetScalarOpacityUnitDistance(0.48117)
+    volumeProperty.SetColor(colorTransferFunction)
+    volumeProperty.ShadeOn()
+    volumeProperty.SetScalarOpacity(opacityTransferFunction)
+    volumeProperty.SetInterpolationTypeToLinear()
+
+    raycast = vtk.vtkVolumeRayCastCompositeFunction()
+    volumeMapper = vtk.vtkVolumeRayCastMapper()
+    volumeMapper.SetVolumeRayCastFunction(raycast)
+    volumeMapper.SetInputConnection(imcast.GetOutputPort())
+    volumeMapper.SetBlendModeToComposite()
+    volumeMapper.SetSampleDistance(0.1)
+
+    volume = vtk.vtkVolume()
+    volume.SetMapper(volumeMapper)
+    volume.SetProperty(volumeProperty)
+
+    # === DEBUG TEST ===
+    # renderer = vtk.vtkRenderer()
+    # renderer.AddVolume(volume)
+    # vdisplay = xvfbwrapper.Xvfb()
+    # vdisplay.start()
+    #
+    # print "writing"
+    # ImageWriter(renderer, outFileName="tmp1")
+    # print "write 1..."
+    # camera = renderer.GetActiveCamera()
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp2")
+    # print "write 2..."
+    # renderer.ResetCameraClippingRange()
+    # vdisplay.stop()
+    # === DEBUG TEST ===
+    return volume
+
 def VolumeRenderingRayCast(inVolume, scale=[1,1,1], lowerThereshold=0, upperThereshold=None):
     inVolume = np.ushort(inVolume)
     inVolumeShape = inVolume.shape
@@ -148,5 +289,13 @@ def TestDTILoader():
 
     vdisplay.stop()
 
+def TestGPUVolumeRender():
+    reader = vtk.vtkDICOMImageReader()
+    reader.SetDataByteOrderToLittleEndian()
+    reader.SetDirectoryName("../TestData/cta_output")
+    reader.SetDataSpacing(3.2,3.2,1.5)
+    reader.SetDataOrigin(0,0,0)
+    vol = VolumeRenderingGPUDICOMLoader(reader)
+
 if __name__ == '__main__':
-    TestDTILoader()
+    TestGPUVolumeRender()
