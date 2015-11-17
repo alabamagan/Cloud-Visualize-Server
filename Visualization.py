@@ -141,15 +141,19 @@ class Visualization(object):
             camera = renderer.GetActiveCamera()
             m_distance = camera.GetDistance()
             # - Add restrict zoom at server side, there should be zoom restrictions at client side too
-            if config.cameraZoomStep.has_key(str(self._visualizationJobID)):
-                m_zoomStep = config.cameraZoomStep[str(self._visualizationJobID)]
-            else:
-                m_zoomStep = m_distance/5.
+
             # - Zoom according to zoom factor
-            if m_zoomFactor and m_distance - m_zoomStep > m_zoomStep:
-                camera.SetDistance(m_distance - m_zoomStep)
-            elif not m_zoomFactor and m_distance + m_zoomStep < 10*m_zoomStep:
-                camera.SetDistance(m_distance + m_zoomStep)
+            if not m_zoomFactor:
+                camera.Zoom(0.9)
+            else:
+                camera.Zoom(1/0.9)
+
+            # - Update global dict
+            config.rendererDict[str(self._visualizationJobID)] = renderer
+            # Load Main process module
+            mp = MainProcess.MainProcess()
+            m_path = self._GetOutDataDirectory()+"/current_"+str(self._visualizationJobID)
+            print camera.GetDistance()
             mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, outFileName=(m_path), dimension=config.dimensionDict[self._visualizationJobID])
             # - Encode Image file
             imageB = file(m_path+".%s"%self._outCompressionType, 'rb')

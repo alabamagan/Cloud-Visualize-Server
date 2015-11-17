@@ -27,8 +27,13 @@ coneActor.SetMapper(coneMapper)
  
 # assign actor to the renderer
 ren.AddActor(coneActor)
- 
-# enable user interface interactor
-iren.Initialize()
 renWin.Render()
-iren.Start()
+
+# enable user interface interactor
+camera = ren.GetActiveCamera()
+for i in xrange(10):
+    camera.Zoom(0.9)
+    renWin.Render()
+    ren.SetActiveCamera(camera)
+    iren.Initialize()
+    iren.Start()
