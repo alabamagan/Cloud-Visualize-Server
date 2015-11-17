@@ -173,7 +173,7 @@ class Visualization(object):
         try:
             # TODO: Write document for the parameter of Volume Render
             m_imagePath = str(self._inDataDirectory)         # TODO: Fill in document
-            m_acceptedFormat = ['nii', 'vtk']
+            m_acceptedFormat = ['nii', 'vtk', 'DICOM']
 
             # Handle contrast range
             if m_contrastRange == None:
@@ -221,6 +221,22 @@ class Visualization(object):
                 mp = MainProcess.MainProcess()
                 m_actor = mp.VolumeRenderingDTILoader(m_reader)
                 renderer.AddActor(m_actor)
+
+            # if DICOM - Load VolumeRenderingDICOMLoader, note that if data is dicom, suffix ".DICOM" show be added to the inDataDirectory
+            elif m_suffix == 'DICOM':
+                # TODO: allows user defined thereshold
+                # -- Construct dicom reader for function in main process
+                reader = vtk.vtkDICOMImageReader()
+                reader.SetDataByteOrderToLittleEndian() # TODO: allow user input
+                reader.SetDirectoryName(m_imagePath.replace(".DICOM", ""))
+                reader.SetDataSpacing(3.2,3.2,1.5) # TODO: allow user input
+                reader.SetDataOrigin(0,0,0) # TODO: allow user input
+
+                mp = MainProcess.MainProcess()
+                m_volume = mp.VolumeRenderingDICOMLoader(reader)
+                renderer.AddVolume(m_volume)
+
+
 
             mp.ImageWriter(renderer, outFileName=self._GetOutDataDirectory()+"/%s_Initialize"%self._visualizationJobID, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
             return renderer

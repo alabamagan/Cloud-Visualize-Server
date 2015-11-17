@@ -5,4 +5,6 @@ class MainProcess(object):
         super(MainProcess, self).__init__()
         self.VolumeRenderingRayCast = VolumeRendering.VolumeRenderingRayCast
         self.VolumeRenderingDTILoader = VolumeRendering.VolumeRenderingDTILoader
+        self.VolumeRenderingDICOMLoader = VolumeRendering.VolumeRenderingDICOMLoader
         self.ImageWriter = VolumeRendering.ImageWriter
+
