@@ -43,6 +43,8 @@ def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, user
 
     if subType == "Rotation":
         imagefile = g.ParseQuery()
+    if subType == "Zoom":
+        imagefile = g.ParseQuery()
     return imagefile
 
 def Registration():
@@ -65,7 +67,7 @@ if __name__ == '__main__':
         raise SystemError("Lock file /tmp/clv.pid exist")
     else:
         # Threading HTTP-Server
-        serverIP = '192.168.1.2'
+        serverIP = '192.168.43.30'
         http_server = pyjsonrpc.ThreadingHttpServer(
             server_address = (serverIP, 43876),
             RequestHandlerClass = RequestHandler
