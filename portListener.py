@@ -5,12 +5,13 @@ import config
 import pyjsonrpc
 import base64
 import xvfbwrapper
+import signal
 from Visualization import *
 
 def Prober():
     return os.getpid()
 
-
+# TODO: Add compression type to the parameters
 def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, userID):
     message =  "Visualization is requested with following parameters \n " \
                "subType: \t%s\n" \
@@ -33,7 +34,7 @@ def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, user
     Query['QuerySubType'] = subType
     Query['Parameter'] = parameter
     # call visualization.ParseQuery(), require it to return renderer and initial rendered picture file
-    g = Visualization(Query, inDataDirectory=os.path.abspath('.')+"/TestData/%s"%subjectID, outDataDirectory="/tmp/ram/cldv/%s"%config.pid, visualizationJobID=visualizationJobID)
+    g = Visualization(Query, outCompressionType="jpg",inDataDirectory=os.path.abspath('.')+"/TestData/%s"%subjectID, outDataDirectory="/tmp/ram/cldv/%s"%config.pid, visualizationJobID=visualizationJobID)
 
     # If Visualization->volume renderering
     if subType == "VolumeRendering":
@@ -41,6 +42,8 @@ def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, user
         config.rendererDict[visualizationJobID] = renderer
 
     if subType == "Rotation":
+        imagefile = g.ParseQuery()
+    if subType == "Zoom":
         imagefile = g.ParseQuery()
     return imagefile
 
@@ -64,12 +67,13 @@ if __name__ == '__main__':
         raise SystemError("Lock file /tmp/clv.pid exist")
     else:
         # Threading HTTP-Server
+        serverIP = '192.168.43.30'
         http_server = pyjsonrpc.ThreadingHttpServer(
-            server_address = ('192.168.1.2', 43876),
+            server_address = (serverIP, 43876),
             RequestHandlerClass = RequestHandler
         )
         print "Starting HTTP server ..."
-        print "URL: http://192.168.1.2:43876"
+        print "URL: http://%s:43876"%serverIP
         try:
             lockerfile = file(locker, 'w')
             lockerfile.write("%s"%os.getpid())
@@ -84,5 +88,7 @@ if __name__ == '__main__':
             os.remove(locker)
             os.system("rm -rf /tmp/ram/cldv")
             vdisplay.stop()
+
+
 
 

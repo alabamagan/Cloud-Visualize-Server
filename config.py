@@ -10,4 +10,5 @@ key-value pairs are according to the name of the dictionary:
 dimensionDict = {}
 rendererDict = {}
 cameraDict = {}
+cameraZoomStep = {}
 pid = os.getpid()
