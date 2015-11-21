@@ -31,9 +31,6 @@ renWin.Render()
 
 # enable user interface interactor
 camera = ren.GetActiveCamera()
-for i in xrange(10):
-    camera.Zoom(0.9)
-    renWin.Render()
-    ren.SetActiveCamera(camera)
-    iren.Initialize()
-    iren.Start()
+iren.Initialize()
+iren.Start()
+

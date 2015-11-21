@@ -38,8 +38,9 @@ def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, user
 
     # If Visualization->volume renderering
     if subType == "VolumeRendering":
-        renderer, imagefile = g.ParseQuery()
-        config.rendererDict[visualizationJobID] = renderer
+        renderer = vtk.vtkRenderer()
+        config.rendererDict[visualizationJobID] = renderer # This keeps the renderer alive for the rest of the operation
+        imagefile = g.ParseQuery()
 
     if subType == "Rotation":
         imagefile = g.ParseQuery()
@@ -75,19 +76,21 @@ if __name__ == '__main__':
         print "Starting HTTP server ..."
         print "URL: http://%s:43876"%serverIP
         try:
-            lockerfile = file(locker, 'w')
-            lockerfile.write("%s"%os.getpid())
-            lockerfile.close()
+            # lockerfile = file(locker, 'w')
+            # lockerfile.write("%s"%os.getpid())
+            # lockerfile.close()
             if not os.path.isdir("/tmp/ram/cldv/%s"%config.pid):
                 os.system("mkdir -p /tmp/ram/cldv/%s"%config.pid)
-            vdisplay = xvfbwrapper.Xvfb()
-            vdisplay.start()
+            if config.vdisplay:
+                vdisplay = xvfbwrapper.Xvfb()
+                vdisplay.start()
             http_server.serve_forever()
         except KeyboardInterrupt:
             http_server.shutdown()
-            os.remove(locker)
+            # os.remove(locker)
             os.system("rm -rf /tmp/ram/cldv")
-            vdisplay.stop()
+            if config.vdisplay:
+                vdisplay.stop()
 
 
 

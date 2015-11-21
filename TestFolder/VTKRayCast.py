@@ -43,7 +43,7 @@ volumeProperty.SetInterpolationTypeToLinear()
 compositeFunction = vtk.vtkVolumeRayCastCompositeFunction()
 volumeMapper = vtk.vtkVolumeRayCastMapper()
 volumeMapper.SetVolumeRayCastFunction(compositeFunction)
-volumeMapper.SetInputConnectio(vtkArrayFromNP)
+volumeMapper.SetInputConnection(ren.GetOutputPort())
 
 # The volume holds the mapper annd the property and
 # can be used to position/orient the volume
