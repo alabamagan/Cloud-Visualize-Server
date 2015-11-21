@@ -230,14 +230,14 @@ class Visualization(object):
         elif m_suffix == 'DICOM':
             # TODO: allows user defined thereshold
             # -- Construct dicom reader for function in main process
-            reader = vtk.vtkDICOMImageReader()
-            reader.SetDataByteOrderToLittleEndian() # TODO: allow user input
-            reader.SetDirectoryName(m_imagePath.replace(".DICOM", ""))
-            reader.SetDataSpacing(3.2,3.2,1.5) # TODO: allow user input
-            reader.SetDataOrigin(0,0,0) # TODO: allow user input
+            m_reader = vtk.vtkDICOMImageReader()
+            m_reader.SetDataByteOrderToLittleEndian() # TODO: allow user input
+            m_reader.SetDirectoryName(m_imagePath.replace(".DICOM", ""))
+            m_reader.SetDataSpacing(3.2,3.2,1.5) # TODO: allow user input
+            m_reader.SetDataOrigin(0,0,0) # TODO: allow user input
 
             mp = MainProcess.MainProcess()
-            m_volume = mp.VolumeRenderingGPUDICOMLoader(reader)
+            m_volume = mp.VolumeRenderingGPUDICOMLoader(m_reader)
             renderer.AddVolume(m_volume)
 
 
