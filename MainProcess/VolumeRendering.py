@@ -11,6 +11,15 @@ import xvfbwrapper
 
 
 def VolumeRenderingDTILoader(inVTKPolyDataReader):
+    """
+    Recieve a vtkPolyDataReader and return correspond actor. Reader can be created in the
+    following manner:
+        reader = vtk.vtkPolyDataReader()
+        reader.SetFileName("path.vtk")
+
+    :param inVTKPolyDataReader:
+    :return:
+    """
     reader = inVTKPolyDataReader
     reader.GetOutput().GetCellData().SetActiveScalars("Average Direction")
     mapper = vtk.vtkPolyDataMapper()
@@ -21,6 +30,18 @@ def VolumeRenderingDTILoader(inVTKPolyDataReader):
 
 
 def VolumeRenderingGPUDICOMLoader(dicomreader):
+    """
+    Recieve a vtkDICOMImageReader and return the volume actor. Reader can be created in
+    the following manner:
+
+        reader = vtk.vtkDICOMImageReader()
+        reader.SetDirectoryName(path)
+        reader.SetDataSpacing(3.2,3.2,1.5)  # Set slice spacing
+        reader.SetDataOrigin(0,0,0)
+
+    :param dicomreader: vtkDICOMImageReader()
+    :return: vtkVolume()
+    """
     imcast = vtk.vtkImageCast()
     imcast.SetInputConnection(dicomreader.GetOutputPort())
     imcast.SetOutputScalarTypeToUnsignedShort()
@@ -165,8 +186,18 @@ def VolumeRenderingDICOMLoader(dicomreader):
 
 
 def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThereshold=0, upperThereshold=None):
+    """
+    Recieve a numpy volume and render it with RayCast method. This method employs CPU raycast
+    and will subject to upgrades of using GPUVolumeMapper in the future. The method returns
+    a vtkVolume actor which can be added to a vtkRenderer
+
+    :param inVolume:        numpy volume
+    :param scale:           scale [x, y, z] of the slice/voxel spacing to real spacing
+    :param lowerThereshold: lower thereshold for raycast. Default = 0
+    :param upperThereshold: upper thereshold for raycast. Default = inVolume.max()
+    :return: vtk.vtkVolume
+    """
     inVolume = np.ushort(inVolume)
-    inVolumeShape = inVolume.shape
     inVolumeString = inVolume.tostring()
 
     # Color map related
@@ -233,9 +264,12 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tm
 
     Note:
         Depending on the version of vtk and graphics driver,
-    the vtkRenderWindow.SetOffScreenRendering(1) may behave strangely, it is therefore adviced
+    the vtkRenderWindow.SetOffScreenRendering(1) may behave strangely, it is therefore advised
     to use the xvfbwrapper if you are hosting a headless server and comment the line that writes
     renderWin.SetOffScreenRendering(1) in this function.
+        Alternatively, if you managed to compile VTK from souce with the option VTK_USE_OFFSCREEN
+    on then you might simply use SetOffScreenRendering(1)/OffScreenRenderingOn() and suppress
+    xvfbwrapper through the code by setting config.vdisplay=False
     """
     renderWin = vtk.vtkRenderWindow()
     renderWin.AddRenderer(renderer)
@@ -269,7 +303,11 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tm
     pass
 
 
-def TestRayCase():
+def TestRayCast():
+    """
+    Test Ray Cast Usage, uncomment the DEBUG TEST lines before use
+    :return:
+    """
     pre = nifti.NiftiImage('../TestData/pre_t2_brain_50p.nii')
     preD = pre.getDataArray()
     scale = pre.header['pixdim'][1:4]
@@ -288,6 +326,10 @@ def TestRayCase():
 
 
 def TestDTILoader():
+    """
+    Testing DTI Usage with tract5000.vtk
+    :return:
+    """
     reader = vtk.vtkPolyDataReader()
     reader.SetFileName("../TestData/tract5000.vtk")
     actor = VolumeRenderingDTILoader(reader)
@@ -312,6 +354,10 @@ def TestDTILoader():
 
 
 def TestVolumeRender():
+    """
+    Test DICOM loader usage, uncomment the DEBUG TEST lines before use
+    :return:
+    """
     reader = vtk.vtkDICOMImageReader()
     reader.SetDataByteOrderToLittleEndian()
     reader.SetDirectoryName("../TestData/cta_output")
@@ -332,6 +378,10 @@ def TestVolumeRender():
 
 
 def TestGPUVolumeRender():
+    """
+    Test GPU DICOM Loader Usage, uncomment the DEBUG TEST lines before use
+    :return:
+    """
     reader = vtk.vtkDICOMImageReader()
     reader.SetDataByteOrderToLittleEndian()
     reader.SetDirectoryName("../TestData/cta_output")
