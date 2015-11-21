@@ -1,9 +1,14 @@
 #!/usr/bin/python
 
+import sys
 import vtk
+
+sys.path.append("../")
+import config
 import numpy as np
 import nifti
 import xvfbwrapper
+
 
 def VolumeRenderingDTILoader(inVTKPolyDataReader):
     reader = inVTKPolyDataReader
@@ -14,9 +19,8 @@ def VolumeRenderingDTILoader(inVTKPolyDataReader):
     actor.SetMapper(mapper)
     return actor
 
+
 def VolumeRenderingGPUDICOMLoader(dicomreader):
-
-
     imcast = vtk.vtkImageCast()
     imcast.SetInputConnection(dicomreader.GetOutputPort())
     imcast.SetOutputScalarTypeToUnsignedShort()
@@ -49,13 +53,13 @@ def VolumeRenderingGPUDICOMLoader(dicomreader):
     volumeProperty.SetSpecularPower(1)
     volumeProperty.DisableGradientOpacityOn()
     volumeProperty.SetComponentWeight(1, 1)
-    volumeProperty.GetScalarOpacityUnitDistance(0.48117)
+    volumeProperty.SetScalarOpacityUnitDistance(0.48117)
     volumeProperty.SetColor(colorTransferFunction)
     volumeProperty.ShadeOn()
     volumeProperty.SetScalarOpacity(opacityTransferFunction)
     volumeProperty.SetInterpolationTypeToLinear()
 
-    raycast = vtk.vtkVolumeRayCastCompositeFunction()
+    # raycast = vtk.vtkVolumeRayCastCompositeFunction()
     volumeMapper = vtk.vtkGPUVolumeRayCastMapper()
     volumeMapper.SetInputConnection(imcast.GetOutputPort())
     volumeMapper.SetBlendModeToComposite()
@@ -66,27 +70,31 @@ def VolumeRenderingGPUDICOMLoader(dicomreader):
     volume.SetProperty(volumeProperty)
 
     # === DEBUG TEST ===
-    renderer = vtk.vtkRenderer()
-    renderer.AddVolume(volume)
-    vdisplay = xvfbwrapper.Xvfb()
-    vdisplay.start()
+    # renderer = vtk.vtkRenderer()
+    # renderer.AddVolume(volume)
+    #
+    #
+    # print "writing"
+    # ImageWriter(renderer, outFileName="tmp1")
+    # print "write 1..."
+    # camera = renderer.GetActiveCamera()
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp2")
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp3")
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp4")
+    # print "write 2..."
+    # renderer.ResetCameraClippingRange()
 
-    print "writing"
-    ImageWriter(renderer, outFileName="tmp1")
-    print "write 1..."
-    camera = renderer.GetActiveCamera()
-    camera.Zoom(1.3)
-    camera.Azimuth(40)
-    ImageWriter(renderer, camera=camera, outFileName="tmp2")
-    print "write 2..."
-    renderer.ResetCameraClippingRange()
-    vdisplay.stop()
     # === DEBUG TEST ===
     return volume
 
+
 def VolumeRenderingDICOMLoader(dicomreader):
-
-
     imcast = vtk.vtkImageCast()
     imcast.SetInputConnection(dicomreader.GetOutputPort())
     imcast.SetOutputScalarTypeToUnsignedShort()
@@ -119,7 +127,7 @@ def VolumeRenderingDICOMLoader(dicomreader):
     volumeProperty.SetSpecularPower(1)
     volumeProperty.DisableGradientOpacityOn()
     volumeProperty.SetComponentWeight(1, 1)
-    volumeProperty.GetScalarOpacityUnitDistance(0.48117)
+    volumeProperty.SetScalarOpacityUnitDistance(0.48117)
     volumeProperty.SetColor(colorTransferFunction)
     volumeProperty.ShadeOn()
     volumeProperty.SetScalarOpacity(opacityTransferFunction)
@@ -129,7 +137,7 @@ def VolumeRenderingDICOMLoader(dicomreader):
     volumeMapper = vtk.vtkVolumeRayCastMapper()
     volumeMapper.SetVolumeRayCastFunction(raycast)
     volumeMapper.SetInputConnection(imcast.GetOutputPort())
-    volumeMapper.SetBlendModeToComposite()
+    # volumeMapper.SetBlendModeToComposite()
     volumeMapper.SetSampleDistance(0.1)
 
     volume = vtk.vtkVolume()
@@ -155,7 +163,8 @@ def VolumeRenderingDICOMLoader(dicomreader):
     # === DEBUG TEST ===
     return volume
 
-def VolumeRenderingRayCast(inVolume, scale=[1,1,1], lowerThereshold=0, upperThereshold=None):
+
+def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThereshold=0, upperThereshold=None):
     inVolume = np.ushort(inVolume)
     inVolumeShape = inVolume.shape
     inVolumeString = inVolume.tostring()
@@ -167,16 +176,16 @@ def VolumeRenderingRayCast(inVolume, scale=[1,1,1], lowerThereshold=0, upperTher
     if upperThereshold <= lowerThereshold:
         raise ValueError("Upper thereshold must be larger than lower thereshold.")
 
-    centerThereshold = (upperThereshold - lowerThereshold)/2. + lowerThereshold
-    lowerQuardThereshold = (centerThereshold - lowerThereshold)/2. + lowerThereshold
-    upperQuardThereshold = (upperThereshold - centerThereshold)/2. + centerThereshold
+    centerThereshold = (upperThereshold - lowerThereshold) / 2. + lowerThereshold
+    lowerQuardThereshold = (centerThereshold - lowerThereshold) / 2. + lowerThereshold
+    upperQuardThereshold = (upperThereshold - centerThereshold) / 2. + centerThereshold
 
     dataImporter = vtk.vtkImageImport()
     dataImporter.CopyImportVoidPointer(inVolumeString, len(inVolumeString))
     dataImporter.SetDataScalarTypeToUnsignedShort()
     dataImporter.SetNumberOfScalarComponents(1)
-    dataImporter.SetDataExtent(0, inVolume.shape[2]-1, 0, inVolume.shape[1]-1, 0, inVolume.shape[0]-1)
-    dataImporter.SetWholeExtent(0, inVolume.shape[2]-1, 0, inVolume.shape[1]-1, 0, inVolume.shape[0]-1)
+    dataImporter.SetDataExtent(0, inVolume.shape[2] - 1, 0, inVolume.shape[1] - 1, 0, inVolume.shape[0] - 1)
+    dataImporter.SetWholeExtent(0, inVolume.shape[2] - 1, 0, inVolume.shape[1] - 1, 0, inVolume.shape[0] - 1)
 
     alphaChannelFunc = vtk.vtkPiecewiseFunction()
     alphaChannelFunc.AddPoint(lowerThereshold, 0)
@@ -207,7 +216,9 @@ def VolumeRenderingRayCast(inVolume, scale=[1,1,1], lowerThereshold=0, upperTher
     # Volume is returned for further rendering
     return volume
 
-def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tmp", suppress=False, dimension=[400,400]):
+
+def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tmp", suppress=False,
+                dimension=[400, 400], AAFrames=5):
     """
     Write image from renderer to a figure.
 
@@ -228,12 +239,13 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tm
     """
     renderWin = vtk.vtkRenderWindow()
     renderWin.AddRenderer(renderer)
-    renderWin.SetSize(dimension[0], dimension[1])
-    renderWin.SetOffScreenRendering(1)
 
-    # ** Note that rendering does not work with the interactor. **
-
+    # print renderWin.GetAAFrames()
+    renderWin.SetSize(int(dimension[0]), int(dimension[1]))
+    renderWin.OffScreenRenderingOn()
     renderWin.Render()
+    renderWin.SetAAFrames(AAFrames)
+    # ** Note that rendering does not work with the interactor. **
 
     windowToImageFilter = vtk.vtkWindowToImageFilter()
     windowToImageFilter.SetInput(renderWin)
@@ -245,14 +257,14 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tm
     # Writer the render to image
     if outCompressionType == 'png':
         writer = vtk.vtkPNGWriter()
-        writer.SetFileName(outFileName+".png")
+        writer.SetFileName(outFileName + ".png")
 
     if outCompressionType == 'jpeg' or outCompressionType == 'jpg':
         writer = vtk.vtkJPEGWriter()
-        writer.SetFileName(outFileName+".jpg")
+        writer.SetFileName(outFileName + ".jpg")
 
     writer.SetInputConnection(windowToImageFilter.GetOutputPort())
-    if suppress==False:
+    if suppress == False:
         writer.Write()
     pass
 
@@ -268,34 +280,70 @@ def TestRayCase():
     volume = VolumeRenderingRayCast(preD, scale)
     renderer = vtk.vtkRenderer()
     renderer.AddVolume(volume)
-    ImageWriter(renderer, outFileName="Initialize") # Must render once before you get camera
+    ImageWriter(renderer, outFileName="Initialize")  # Must render once before you get camera
     camera = renderer.GetActiveCamera()
 
     vdisplay.stop()
     pass
 
+
 def TestDTILoader():
     reader = vtk.vtkPolyDataReader()
-    reader.SetFileName("../TestData/tract.vtk")
+    reader.SetFileName("../TestData/tract5000.vtk")
     actor = VolumeRenderingDTILoader(reader)
 
-    vdisplay = xvfbwrapper.Xvfb(width=1024, height=768, colordepth=24)
-    vdisplay.start()
+    if config.vdisplay:
+        vdisplay = xvfbwrapper.Xvfb(width=1024, height=768, colordepth=24)
+        vdisplay.start()
 
     renderer = vtk.vtkRenderer()
     renderer.AddActor(actor)
-    renderer.SetBackground(0,0,0)
-    ImageWriter(renderer, outFileName="tractTest", dimension=[800,800])
+    renderer.SetBackground(0, 0, 0)
+    renWin = vtk.vtkRenderWindow()
+    renWin.AddRenderer(renderer)
+    ImageWriter(renderer, outFileName="tractTest", dimension=[800, 800])
+    camera = renderer.GetActiveCamera()
+    # camera.Zoom(1.5)
+    # camera.Azimuth(30)
+    # camera.Elevation(30)
+    # ImageWriter(renderer, outFileName="tractTest", dimension=[800, 800])
+    if config.vdisplay:
+        vdisplay.stop()
 
-    vdisplay.stop()
+
+def TestVolumeRender():
+    reader = vtk.vtkDICOMImageReader()
+    reader.SetDataByteOrderToLittleEndian()
+    reader.SetDirectoryName("../TestData/cta_output")
+    reader.SetDataSpacing(3.2, 3.2, 1.5)
+    reader.SetDataOrigin(0, 0, 0)
+    vol = VolumeRenderingDICOMLoader(reader)
+    renderer = vtk.vtkRenderer()
+    renderer.AddVolume(vol)
+    renWin = vtk.vtkRenderWindow()
+    renWin.AddRenderer(renderer)
+
+    # vdisplay = xvfbwrapper.Xvfb()
+    # vdisplay.start()
+    ImageWriter(renderer, outFileName="tmp")
+    renderer.GetActiveCamera().Azimuth(40)
+    ImageWriter(renderer, outFileName="tmp2")
+    # vdisplay.stop()
+
 
 def TestGPUVolumeRender():
     reader = vtk.vtkDICOMImageReader()
     reader.SetDataByteOrderToLittleEndian()
     reader.SetDirectoryName("../TestData/cta_output")
-    reader.SetDataSpacing(3.2,3.2,1.5)
-    reader.SetDataOrigin(0,0,0)
+    reader.SetDataSpacing(3.2, 3.2, 1.5)
+    reader.SetDataOrigin(0, 0, 0)
+    print "test"
     vol = VolumeRenderingGPUDICOMLoader(reader)
+    renderer = vtk.vtkRenderer()
+    renderer.AddVolume(vol)
+    ImageWriter(renderer, outFileName="gg")
+    renderer.GetActiveCamera().Azimuth(40)
+    ImageWriter(renderer, outFileName="gg2")
 
 if __name__ == '__main__':
-    TestGPUVolumeRender()
+    TestDTILoader()

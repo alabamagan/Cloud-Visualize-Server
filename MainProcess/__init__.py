@@ -6,5 +6,6 @@ class MainProcess(object):
         self.VolumeRenderingRayCast = VolumeRendering.VolumeRenderingRayCast
         self.VolumeRenderingDTILoader = VolumeRendering.VolumeRenderingDTILoader
         self.VolumeRenderingDICOMLoader = VolumeRendering.VolumeRenderingDICOMLoader
+        self.VolumeRenderingGPUDICOMLoader = VolumeRendering.VolumeRenderingGPUDICOMLoader
         self.ImageWriter = VolumeRendering.ImageWriter
 

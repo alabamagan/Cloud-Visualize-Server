@@ -95,16 +95,19 @@ class Visualization(object):
         # If Visualization->VolumeRendering
         if self._subType == "VolumeRendering":
             # - Initialize variables
+            if config.renWinDict.has_key(str(self._visualizationJobID)):
+                print config.renWinDict[str(self._visualizationJobID)]
             m_contrastRange = m_parameter
             # - Make a renderer
-            renderer = self._VolumeRender(m_contrastRange)
+            self._VolumeRender(m_contrastRange) # renderer assigned to config.rendererDict
             # - Render the image once (Done in _VolumeRender function)
+
             m_path = self._GetOutDataDirectory()+"/%s_Initialize.%s"%(self._visualizationJobID, self._outCompressionType)
             imageB = file(m_path,'rb')
             # - Encode Image File
             imageB = base64.b64encode(imageB.read())
             # - return renderer to upper layer
-            return renderer, imageB
+            return imageB
 
 
         # If Visualization->Rotation
@@ -120,11 +123,12 @@ class Visualization(object):
             camera.Elevation(m_rotationElevation)
             camera.OrthogonalizeViewUp()
             # - Update global dict
-            config.rendererDict[str(self._visualizationJobID)] = renderer
+            # config.rendererDict[str(self._visualizationJobID)] = renderer
             # - Render Image
             mp = MainProcess.MainProcess()
             m_path = self._GetOutDataDirectory()+"/current_"+str(self._visualizationJobID)
             # TODO: Allow compatibale compression type, remember to change definition for imageB too
+
             mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, outFileName=(m_path), dimension=config.dimensionDict[self._visualizationJobID])
             imageB = file(m_path+".%s"%self._outCompressionType,'rb')
             # - Encode Image File
@@ -170,88 +174,107 @@ class Visualization(object):
 
 
     def _VolumeRender(self, m_contrastRange=None):
-        try:
-            # TODO: Write document for the parameter of Volume Render
-            m_imagePath = str(self._inDataDirectory)         # TODO: Fill in document
-            m_acceptedFormat = ['nii', 'vtk', 'DICOM']
+        # try:
+        # TODO: Write document for the parameter of Volume Render
+        m_imagePath = str(self._inDataDirectory)         # TODO: Fill in document
+        m_acceptedFormat = ['nii', 'vtk', 'DICOM']
 
-            # Handle contrast range
-            if m_contrastRange == None:
-                m_contrastUpper = None
-                m_contrastLower = 0
-            else:
-                m_contrastUpper = m_contrastRange[1]
-                m_contrastLower = m_contrastRange[0]
+        # Handle contrast range
+        if m_contrastRange == None:
+            m_contrastUpper = None
+            m_contrastLower = 0
+        else:
+            m_contrastUpper = m_contrastRange[1]
+            m_contrastLower = m_contrastRange[0]
 
-            # Image type check TODO: nii.gz, DICOM, ECAT, finish nii.gz first
-            m_imagePathSplitted = m_imagePath.split('.')
-            m_suffix = m_imagePathSplitted[-1]
-            # Create rendere first
+        # Image type check TODO: nii.gz, DICOM, ECAT, finish nii.gz first
+        m_imagePathSplitted = m_imagePath.split('.')
+        m_suffix = m_imagePathSplitted[-1]
+        # Create rendere first
 
-            renderer = vtk.vtkRenderer()
-            renderer.SetBackground(0,0,0)
+        renderer = config.rendererDict[str(self._visualizationJobID)]
+        renderer.SetBackground(0,0,0)
 
-            # since nifti might be compressed
-            if m_suffix == 'gz':
-                m_suffix = m_imagePathSplitted[-2]
+        # since nifti might be compressed
+        if m_suffix == 'gz':
+            m_suffix = m_imagePathSplitted[-2]
 
-            if m_acceptedFormat.count(m_suffix) == 0:
-                raise TypeError("Wrong input format, currently except %s"%m_acceptedFormat)
+        if m_acceptedFormat.count(m_suffix) == 0:
+            raise TypeError("Wrong input format, currently except %s"%m_acceptedFormat)
 
-            # TODO: Write the following part to a reader function
-            # if nifti - Load image as numpy array
-            if m_suffix == 'nii':
-                m_volume = nifti.NiftiImage(m_imagePath)
-                m_volumeData = m_volume.getDataArray()
-                m_volumeHeader = m_volume.header
-                m_volumeScale = m_volumeHeader['pixdim'][1:4]
+        # TODO: Write the following part to a reader function
+        # if nifti - Load image as numpy array
+        if m_suffix == 'nii':
+            m_volume = nifti.NiftiImage(m_imagePath)
+            m_volumeData = m_volume.getDataArray()
+            m_volumeHeader = m_volume.header
+            m_volumeScale = m_volumeHeader['pixdim'][1:4]
 
-                # -- Use function from Main Process.
-                mp = MainProcess.MainProcess()
+            # -- Use function from Main Process.
+            mp = MainProcess.MainProcess()
 
-                m_volume = mp.VolumeRenderingRayCast(m_volumeData, scale=m_volumeScale, upperThereshold=m_contrastUpper, lowerThereshold=m_contrastLower)
-                renderer.AddVolume(m_volume)
+            m_volume = mp.VolumeRenderingRayCast(m_volumeData, scale=m_volumeScale, upperThereshold=m_contrastUpper, lowerThereshold=m_contrastLower)
+            renderer.AddVolume(m_volume)
 
-            # if vtk - Load by vtk methods
-            elif m_suffix == 'vtk':
-                m_reader = vtk.vtkPolyDataReader()
-                m_reader.SetFileName(m_imagePath)
+        # if vtk - Load by vtk methods
+        elif m_suffix == 'vtk':
+            m_reader = vtk.vtkPolyDataReader()
+            m_reader.SetFileName(m_imagePath)
 
-                # -- Call volume rendering function
-                mp = MainProcess.MainProcess()
-                m_actor = mp.VolumeRenderingDTILoader(m_reader)
-                renderer.AddActor(m_actor)
+            # -- Call volume rendering function
+            mp = MainProcess.MainProcess()
+            m_actor = mp.VolumeRenderingDTILoader(m_reader)
+            renderer.AddActor(m_actor)
 
-            # if DICOM - Load VolumeRenderingDICOMLoader, note that if data is dicom, suffix ".DICOM" show be added to the inDataDirectory
-            elif m_suffix == 'DICOM':
-                # TODO: allows user defined thereshold
-                # -- Construct dicom reader for function in main process
-                reader = vtk.vtkDICOMImageReader()
-                reader.SetDataByteOrderToLittleEndian() # TODO: allow user input
-                reader.SetDirectoryName(m_imagePath.replace(".DICOM", ""))
-                reader.SetDataSpacing(3.2,3.2,1.5) # TODO: allow user input
-                reader.SetDataOrigin(0,0,0) # TODO: allow user input
+        # if DICOM - Load VolumeRenderingDICOMLoader, note that if data is dicom, suffix ".DICOM" show be added to the inDataDirectory
+        elif m_suffix == 'DICOM':
+            # TODO: allows user defined thereshold
+            # -- Construct dicom reader for function in main process
+            reader = vtk.vtkDICOMImageReader()
+            reader.SetDataByteOrderToLittleEndian() # TODO: allow user input
+            reader.SetDirectoryName(m_imagePath.replace(".DICOM", ""))
+            reader.SetDataSpacing(3.2,3.2,1.5) # TODO: allow user input
+            reader.SetDataOrigin(0,0,0) # TODO: allow user input
 
-                mp = MainProcess.MainProcess()
-                m_volume = mp.VolumeRenderingDICOMLoader(reader)
-                renderer.AddVolume(m_volume)
-
-
-
-            mp.ImageWriter(renderer, outFileName=self._GetOutDataDirectory()+"/%s_Initialize"%self._visualizationJobID, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
-            return renderer
+            mp = MainProcess.MainProcess()
+            m_volume = mp.VolumeRenderingGPUDICOMLoader(reader)
+            renderer.AddVolume(m_volume)
 
 
-        except:
-            print "Error occurs when rendering volume"
+        m_path = self._GetOutDataDirectory()+"/%s_Initialize"%self._visualizationJobID
+        mp.ImageWriter(renderer, outFileName=m_path, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
+        return
 
-        pass
+        #
+        # except:
+        #     print "Error occurs when rendering volume"
+        #
+        # pass
 
     def Test(self):
+        # vdisplay=xvfbwrapper.Xvfb()
+        # vdisplay.start()
+        config.dimensionDict['1234'] = [400,400]
         self._SetInDataDirectory('./TestData/pre_t2_brain_50p.nii')
-        self._VolumeRender()
+        self._setOutDataDirectory(('./TestData/'))
+        ren, im = self.ParseQuery()
+
+        inQuery = {'QuerySubType':"Rotation", 'Parameter':"[10,10]"}
+        test._inQuery = inQuery
+        # config.rendererDict['1234'] = ren
+        test.ParseQuery()
+        # vdisplay.stop()
+
+    def TestRotation(self):
+        config.dimensionDict['1234'] = [400,400]
+        self._SetInDataDirectory('./TestData/pre_t2_brain_50p.nii')
+        self._setOutDataDirectory(('./TestData/'))
+        self.ParseQuery()
 
 
 if __name__ == '__main__':
-    test = Visualization('inQuery','./TestData/pre_t2_brain_50p.nii','what', 'camera', 'outcompressionType', 'jobid' )
+    inQuery = {'QuerySubType':"VolumeRendering", 'Parameter':"None"}
+    test = Visualization(inQuery,'./TestData/pre_t2_brain_50p.nii', outCompressionType="jpg" ,visualizationJobID="1234")
     test.Test()
+
+    # inQuery = {'QuerySubType':"Rotation", 'Parameter':"[10,10]"}

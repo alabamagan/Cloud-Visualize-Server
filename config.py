@@ -9,6 +9,8 @@ key-value pairs are according to the name of the dictionary:
 """
 dimensionDict = {}
 rendererDict = {}
+renWinDict = {}
 cameraDict = {}
 cameraZoomStep = {}
 pid = os.getpid()
+vdisplay = False
