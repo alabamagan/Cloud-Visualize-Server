@@ -91,25 +91,27 @@ def VolumeRenderingGPUDICOMLoader(dicomreader):
     volume.SetProperty(volumeProperty)
 
     # === DEBUG TEST ===
-    # renderer = vtk.vtkRenderer()
-    # renderer.AddVolume(volume)
-    #
-    #
-    # print "writing"
-    # ImageWriter(renderer, outFileName="tmp1")
-    # print "write 1..."
-    # camera = renderer.GetActiveCamera()
-    # camera.Zoom(1.3)
-    # camera.Azimuth(40)
-    # ImageWriter(renderer, camera=camera, outFileName="tmp2")
-    # camera.Zoom(1.3)
-    # camera.Azimuth(40)
-    # ImageWriter(renderer, camera=camera, outFileName="tmp3")
-    # camera.Zoom(1.3)
-    # camera.Azimuth(40)
-    # ImageWriter(renderer, camera=camera, outFileName="tmp4")
-    # print "write 2..."
-    # renderer.ResetCameraClippingRange()
+    renderer = vtk.vtkRenderer()
+    renderer.AddVolume(volume)
+
+
+    print "writing"
+    ImageWriter(renderer, outFileName="tmp1")
+    print "write finish"
+    camera = renderer.GetActiveCamera()
+    camera.Zoom(1.3)
+    camera.Azimuth(40)
+    ImageWriter(renderer, camera=camera, outFileName="tmp2", AAFrames=0)
+    print "write cam1"
+    camera.Zoom(1.3)
+    camera.Azimuth(40)
+    ImageWriter(renderer, camera=camera, outFileName="tmp3", AAFrames=0)
+    print "write cam2"
+    camera.Zoom(1.3)
+    camera.Azimuth(40)
+    ImageWriter(renderer, camera=camera, outFileName="tmp4", AAFrames=0)
+    print "write cam3"
+    renderer.ResetCameraClippingRange()
 
     # === DEBUG TEST ===
     return volume
@@ -166,21 +168,21 @@ def VolumeRenderingDICOMLoader(dicomreader):
     volume.SetProperty(volumeProperty)
 
     # === DEBUG TEST ===
-    # renderer = vtk.vtkRenderer()
-    # renderer.AddVolume(volume)
-    # vdisplay = xvfbwrapper.Xvfb()
-    # vdisplay.start()
-    #
-    # print "writing"
-    # ImageWriter(renderer, outFileName="tmp1")
-    # print "write 1..."
-    # camera = renderer.GetActiveCamera()
-    # camera.Zoom(1.3)
-    # camera.Azimuth(40)
-    # ImageWriter(renderer, camera=camera, outFileName="tmp2")
-    # print "write 2..."
-    # renderer.ResetCameraClippingRange()
-    # vdisplay.stop()
+    renderer = vtk.vtkRenderer()
+    renderer.AddVolume(volume)
+    vdisplay = xvfbwrapper.Xvfb()
+    vdisplay.start()
+
+    print "writing"
+    ImageWriter(renderer, outFileName="tmp1")
+    print "write 1..."
+    camera = renderer.GetActiveCamera()
+    camera.Zoom(1.3)
+    camera.Azimuth(40)
+    ImageWriter(renderer, camera=camera, outFileName="tmp2")
+    print "write 2..."
+    renderer.ResetCameraClippingRange()
+    vdisplay.stop()
     # === DEBUG TEST ===
     return volume
 
@@ -389,11 +391,11 @@ def TestGPUVolumeRender():
     reader.SetDataOrigin(0, 0, 0)
     print "test"
     vol = VolumeRenderingGPUDICOMLoader(reader)
-    renderer = vtk.vtkRenderer()
-    renderer.AddVolume(vol)
-    ImageWriter(renderer, outFileName="gg")
-    renderer.GetActiveCamera().Azimuth(40)
-    ImageWriter(renderer, outFileName="gg2")
+    # renderer = vtk.vtkRenderer()
+    # renderer.AddVolume(vol)
+    # ImageWriter(renderer, outFileName="gg")
+    # renderer.GetActiveCamera().Azimuth(40)
+    # ImageWriter(renderer, outFileName="gg2")
 
 if __name__ == '__main__':
-    TestDTILoader()
+    TestGPUVolumeRender()
