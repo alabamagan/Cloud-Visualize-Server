@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="***REMOVED***">
+  <component name="PublishConfigData" autoUpload="Always" serverName="gpuserver">
     <serverData>
+      <paths name="gpuserver">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/documents/myScripts/python/CloudVisualization" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="mic-Desktop09">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/Documents/myScripts/python/CloudVisualization" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="mic-Top">
         <serverdata>
           <mappings>
