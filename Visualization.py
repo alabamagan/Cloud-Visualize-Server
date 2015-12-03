@@ -5,9 +5,7 @@ import sys
 import config
 import vtk
 import json
-import nifti
 import base64
-import xvfbwrapper
 from vtk.util import numpy_support as vtknp
 
 import MainProcess
@@ -16,7 +14,6 @@ import External
 class Visualization(object):
     """
     Module that handles incomming visualization queries from Portlistener.
-
 
     :param inQuery:             Query in JSON format containing at least the keys: 'QuerySubType',
                                     'Parameter'
@@ -199,15 +196,12 @@ class Visualization(object):
         # TODO: Write the following part to a reader function
         # if nifti - Load image as numpy array
         if m_suffix == 'nii':
-            m_volume = nifti.NiftiImage(m_imagePath)
-            m_volumeData = m_volume.getDataArray()
-            m_volumeHeader = m_volume.header
-            m_volumeScale = m_volumeHeader['pixdim'][1:4]
+            m_reader = vtk.vtkNIFTIImageReader()
+            m_reader.SetFileName(self._inDataDirectory)
 
             # -- Use function from Main Process.
             mp = MainProcess.MainProcess()
-
-            m_volume = mp.VolumeRenderingRayCast(m_volumeData, scale=m_volumeScale, upperThereshold=m_contrastUpper, lowerThereshold=m_contrastLower)
+            m_volume = mp.VolumeRenderingGPURayCast(m_reader, upperThereshold=m_contrastUpper, lowerThereshold=m_contrastLower)
             renderer.AddVolume(m_volume)
 
         # if vtk - Load by vtk methods

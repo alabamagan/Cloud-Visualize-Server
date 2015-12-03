@@ -4,9 +4,6 @@
 # vtkVolumeRayCast mapper
 
 import vtk
-import nifti
-from vtk.util.misc import vtkGetDataRoot
-
 
 # Create the standard renderer, render window and interactor
 ren = vtk.vtkRenderer()

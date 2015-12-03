@@ -4,7 +4,6 @@ import os
 import config
 import pyjsonrpc
 import base64
-import xvfbwrapper
 import signal
 from Visualization import *
 
@@ -83,16 +82,16 @@ if __name__ == '__main__':
             # lockerfile.close()
             if not os.path.isdir("/tmp/ram/cldv/%s"%config.pid):
                 os.system("mkdir -p /tmp/ram/cldv/%s"%config.pid)
-            if config.vdisplay:
-                vdisplay = xvfbwrapper.Xvfb()
-                vdisplay.start()
+            # if config.vdisplay:
+            #     vdisplay = xvfbwrapper.Xvfb()
+            #     vdisplay.start()
             http_server.serve_forever()
         except KeyboardInterrupt:
             http_server.shutdown()
             # os.remove(locker)
             os.system("rm -rf /tmp/ram/cldv")
-            if config.vdisplay:
-                vdisplay.stop()
+            # if config.vdisplay:
+            #     vdisplay.stop()
 
 
 

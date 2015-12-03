@@ -6,8 +6,6 @@ import vtk
 sys.path.append("../")
 import config
 import numpy as np
-import nifti
-import xvfbwrapper
 
 
 def VolumeRenderingDTILoader(inVTKPolyDataReader):
@@ -118,6 +116,13 @@ def VolumeRenderingGPUDICOMLoader(dicomreader):
 
 
 def VolumeRenderingDICOMLoader(dicomreader):
+    """
+    (Not used)
+
+    :param dicomreader:
+    :return:
+    """
+
     imcast = vtk.vtkImageCast()
     imcast.SetInputConnection(dicomreader.GetOutputPort())
     imcast.SetOutputScalarTypeToUnsignedShort()
@@ -186,8 +191,76 @@ def VolumeRenderingDICOMLoader(dicomreader):
     # === DEBUG TEST ===
     return volume
 
+def VolumeRenderingGPURayCast(volumereader, scale=None, lowerThreshold=0, upperThreshold=None):
+    """
+    Ray cast function using GPU general for most volume readers.
+    :param volumereader:        vtk file reader for 3D images
+    :param scale:               scale [x, y, z] of the slice/voxel spacing to real.
+                                    Default = [ volumereader.GetNIFTIHeader().GetPixDim(i) for i in xrange(3)]
+    :param lowerThreshold:      lower Threshold for raycast. Default = 0
+    :param upperThreshold:      upper Threshold for raycast. Default = volumereader.GetOutput().GetScalarRange()[1]
+    :return:
 
-def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThereshold=0, upperThereshold=None):
+    Note: This function requires your version of VTK being compiled with the use of
+    GPU-proprietary libGL.so. The cmake option is OPEN_gl_LIBRARY for VTK 6.3.0. This
+    is more trickier in Linux and is potentially more unstable. For your reference
+    this program is entirely build against nVidia-352 Linux driver.
+    """
+
+    reader = volumereader
+    reader.Update()
+    header = reader.GetNIFTIHeader()
+
+    # Insert Default value if none provided
+    if scale == None:
+        scale = [abs(header.GetPixDim(i)) for i in xrange(3) ]    # Insert Default value if none provided
+    if scale == None:
+        scale = [abs(header.GetPixDim(i)) for i in xrange(3) ]
+    if upperThreshold == None:
+        upperThreshold = reader.GetOutput().GetScalarRange()[1]
+
+    # Error check
+    if lowerThreshold >= upperThreshold:
+        raise ValueError("UpperThreshold cannot be smaller than lowerThreshold")
+
+
+
+
+
+    # Set some default color points
+    centerThreshold = (upperThreshold - lowerThreshold) / 2. + lowerThreshold
+    lowerQuardThreshold = (centerThreshold - lowerThreshold) / 2. + lowerThreshold
+    upperQuardThreshold = (upperThreshold - centerThreshold) / 2. + centerThreshold
+
+    # Set some default alpha map
+    alphaChannelFunc = vtk.vtkPiecewiseFunction()
+    alphaChannelFunc.AddPoint(lowerThreshold, 0)
+    alphaChannelFunc.AddPoint(lowerQuardThreshold, 0.05)
+    alphaChannelFunc.AddPoint(centerThreshold, 0.4)
+    alphaChannelFunc.AddPoint(upperQuardThreshold, 0.05)
+    alphaChannelFunc.AddPoint(upperThreshold, 0)
+
+    colorFunc = vtk.vtkColorTransferFunction()
+    colorFunc.AddRGBPoint(lowerThreshold, 0, 0, 0)
+    colorFunc.AddRGBPoint(centerThreshold, 0.5, .5, .5)
+    colorFunc.AddRGBPoint(upperThreshold, .8, .8, .8)
+
+
+    volumeProperty = vtk.vtkVolumeProperty()
+    volumeProperty.SetColor(colorFunc)
+    volumeProperty.SetScalarOpacity(alphaChannelFunc)
+
+    volumeMapper = vtk.vtkGPUVolumeRayCastMapper()
+    volumeMapper.SetInputConnection(reader.GetOutputPort())
+
+    volume = vtk.vtkVolume()
+    volume.SetMapper(volumeMapper)
+    volume.SetProperty(volumeProperty)
+    volume.SetScale(scale)
+
+    return volume
+
+def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThreshold=0, upperThreshold=None):
     """
     Recieve a numpy volume and render it with RayCast method. This method employs CPU raycast
     and will subject to upgrades of using GPUVolumeMapper in the future. The method returns
@@ -195,23 +268,23 @@ def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThereshold=0, upperTh
 
     :param inVolume:        numpy volume
     :param scale:           scale [x, y, z] of the slice/voxel spacing to real spacing
-    :param lowerThereshold: lower thereshold for raycast. Default = 0
-    :param upperThereshold: upper thereshold for raycast. Default = inVolume.max()
+    :param lowerThreshold:  lower Threshold for raycast. Default = 0
+    :param upperThreshold:  upper Threshold for raycast. Default = inVolume.max()
     :return: vtk.vtkVolume
     """
     inVolume = np.ushort(inVolume)
     inVolumeString = inVolume.tostring()
 
     # Color map related
-    if upperThereshold == None:
-        upperThereshold = inVolume.max()
+    if upperThreshold == None:
+        upperThreshold = inVolume.max()
 
-    if upperThereshold <= lowerThereshold:
-        raise ValueError("Upper thereshold must be larger than lower thereshold.")
+    if upperThreshold <= lowerThreshold:
+        raise ValueError("Upper Threshold must be larger than lower Threshold.")
 
-    centerThereshold = (upperThereshold - lowerThereshold) / 2. + lowerThereshold
-    lowerQuardThereshold = (centerThereshold - lowerThereshold) / 2. + lowerThereshold
-    upperQuardThereshold = (upperThereshold - centerThereshold) / 2. + centerThereshold
+    centerThreshold = (upperThreshold - lowerThreshold) / 2. + lowerThreshold
+    lowerQuardThreshold = (centerThreshold - lowerThreshold) / 2. + lowerThreshold
+    upperQuardThreshold = (upperThreshold - centerThreshold) / 2. + centerThreshold
 
     dataImporter = vtk.vtkImageImport()
     dataImporter.CopyImportVoidPointer(inVolumeString, len(inVolumeString))
@@ -221,16 +294,16 @@ def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThereshold=0, upperTh
     dataImporter.SetWholeExtent(0, inVolume.shape[2] - 1, 0, inVolume.shape[1] - 1, 0, inVolume.shape[0] - 1)
 
     alphaChannelFunc = vtk.vtkPiecewiseFunction()
-    alphaChannelFunc.AddPoint(lowerThereshold, 0)
-    alphaChannelFunc.AddPoint(lowerQuardThereshold, 0.05)
-    alphaChannelFunc.AddPoint(centerThereshold, 0.4)
-    alphaChannelFunc.AddPoint(upperQuardThereshold, 0.05)
-    alphaChannelFunc.AddPoint(upperThereshold, 0)
+    alphaChannelFunc.AddPoint(lowerThreshold, 0)
+    alphaChannelFunc.AddPoint(lowerQuardThreshold, 0.05)
+    alphaChannelFunc.AddPoint(centerThreshold, 0.4)
+    alphaChannelFunc.AddPoint(upperQuardThreshold, 0.05)
+    alphaChannelFunc.AddPoint(upperThreshold, 0)
 
     colorFunc = vtk.vtkColorTransferFunction()
-    colorFunc.AddRGBPoint(lowerThereshold, 0, 0, 0)
-    colorFunc.AddRGBPoint(centerThereshold, 0.5, .5, .5)
-    colorFunc.AddRGBPoint(upperThereshold, .8, .8, .8)
+    colorFunc.AddRGBPoint(lowerThreshold, 0, 0, 0)
+    colorFunc.AddRGBPoint(centerThreshold, 0.5, .5, .5)
+    colorFunc.AddRGBPoint(upperThreshold, .8, .8, .8)
 
     volumeProperty = vtk.vtkVolumeProperty()
     volumeProperty.SetColor(colorFunc)
@@ -279,7 +352,7 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", suppress=False,
     renderWin.OffScreenRenderingOn()
     renderWin.SetSize(int(dimension[0]), int(dimension[1]))
 
-    renderWin.Render()
+    renderWin.Render() # TODO: Error for nifti here
     renderWin.SetAAFrames(AAFrames)
     # ** Note that rendering does not work with the interactor. **
 
@@ -306,55 +379,55 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", suppress=False,
     return result
 
 
-def TestRayCast():
-    """
-    Test Ray Cast Usage, uncomment the DEBUG TEST lines before use
-    :return:
-    """
-    pre = nifti.NiftiImage('../TestData/pre_t2_brain_50p.nii')
-    preD = pre.getDataArray()
-    scale = pre.header['pixdim'][1:4]
+# def TestRayCast():
+#     """
+#     Test Ray Cast Usage, uncomment the DEBUG TEST lines before use
+#     :return:
+#     """
+#     pre = nifti.NiftiImage('../TestData/pre_t2_brain_50p.nii')
+#     preD = pre.getDataArray()
+#     scale = pre.header['pixdim'][1:4]
+#
+#     vdisplay = xvfbwrapper.Xvfb(width=1024, height=768, colordepth=24)
+#     vdisplay.start()
+#
+#     volume = VolumeRenderingRayCast(preD, scale)
+#     renderer = vtk.vtkRenderer()
+#     renderer.AddVolume(volume)
+#     ImageWriter(renderer, outFileName="Initialize")  # Must render once before you get camera
+#     camera = renderer.GetActiveCamera()
+#
+#     vdisplay.stop()
+#     pass
+#
 
-    vdisplay = xvfbwrapper.Xvfb(width=1024, height=768, colordepth=24)
-    vdisplay.start()
-
-    volume = VolumeRenderingRayCast(preD, scale)
-    renderer = vtk.vtkRenderer()
-    renderer.AddVolume(volume)
-    ImageWriter(renderer, outFileName="Initialize")  # Must render once before you get camera
-    camera = renderer.GetActiveCamera()
-
-    vdisplay.stop()
-    pass
-
-
-def TestDTILoader():
-    """
-    Testing DTI Usage with tract5000.vtk
-    :return:
-    """
-    reader = vtk.vtkPolyDataReader()
-    reader.SetFileName("../TestData/tract5000.vtk")
-    actor = VolumeRenderingDTILoader(reader)
-
-    if config.vdisplay:
-        vdisplay = xvfbwrapper.Xvfb(width=1024, height=768, colordepth=24)
-        vdisplay.start()
-
-    renderer = vtk.vtkRenderer()
-    renderer.AddActor(actor)
-    renderer.SetBackground(0, 0, 0)
-    renWin = vtk.vtkRenderWindow()
-    renWin.AddRenderer(renderer)
-    ImageWriter(renderer, outFileName="tractTest", dimension=[800, 800])
-    camera = renderer.GetActiveCamera()
-    # camera.Zoom(1.5)
-    # camera.Azimuth(30)
-    # camera.Elevation(30)
-    # ImageWriter(renderer, outFileName="tractTest", dimension=[800, 800])
-    if config.vdisplay:
-        vdisplay.stop()
-
+# def TestDTILoader():
+#     """
+#     Testing DTI Usage with tract5000.vtk
+#     :return:
+#     """
+#     reader = vtk.vtkPolyDataReader()
+#     reader.SetFileName("../TestData/tract5000.vtk")
+#     actor = VolumeRenderingDTILoader(reader)
+#
+#     if config.vdisplay:
+#         vdisplay = xvfbwrapper.Xvfb(width=1024, height=768, colordepth=24)
+#         vdisplay.start()
+#
+#     renderer = vtk.vtkRenderer()
+#     renderer.AddActor(actor)
+#     renderer.SetBackground(0, 0, 0)
+#     renWin = vtk.vtkRenderWindow()
+#     renWin.AddRenderer(renderer)
+#     ImageWriter(renderer, outFileName="tractTest", dimension=[800, 800])
+#     camera = renderer.GetActiveCamera()
+#     # camera.Zoom(1.5)
+#     # camera.Azimuth(30)
+#     # camera.Elevation(30)
+#     # ImageWriter(renderer, outFileName="tractTest", dimension=[800, 800])
+#     if config.vdisplay:
+#         vdisplay.stop()
+#
 
 def TestVolumeRender():
     """
