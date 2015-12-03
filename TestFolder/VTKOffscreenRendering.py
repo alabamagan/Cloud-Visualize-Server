@@ -1,10 +1,10 @@
 #! ./local/bin/python
 
 from vtk import (vtkSphereSource, vtkPolyDataMapper, vtkActor, vtkRenderer,
-        vtkRenderWindow, vtkWindowToImageFilter, vtkPNGWriter, vtkVersion)
+        vtkRenderWindow, vtkWindowToImageFilter, vtkPNGWriter, vtkVersion, vtkConeSource)
 
 
-sphereSource = vtkSphereSource()
+sphereSource = vtkConeSource()
 mapper = vtkPolyDataMapper()
 mapper.SetInputConnection(sphereSource.GetOutputPort())
 
@@ -13,19 +13,24 @@ actor.SetMapper(mapper)
 
 renderer = vtkRenderer()
 renderWindow = vtkRenderWindow()
-# renderWindow.SetOffScreenRendering(1)
+renderWindow.SetOffScreenRendering(1)
 renderWindow.AddRenderer(renderer)
 
 renderer.AddActor(actor)
-renderer.SetBackground(1, 1, 1)
+renderer.SetBackground(0, 0, 0)
 
 renderWindow.Render()
 
+
 windowToImageFilter = vtkWindowToImageFilter()
 windowToImageFilter.SetInput(renderWindow)
-windowToImageFilter.Update()
-
 writer = vtkPNGWriter()
-writer.SetFileName("sphere.png")
 writer.SetInputConnection(windowToImageFilter.GetOutputPort())
-writer.Write()
+
+for i in xrange(10):
+        renderer.GetActiveCamera().Azimuth(10)
+        # renderWindow.Render()
+        windowToImageFilter.Modified()
+        windowToImageFilter.Update()
+        writer.SetFileName("sphere_%s.png"%i)
+        writer.Write()

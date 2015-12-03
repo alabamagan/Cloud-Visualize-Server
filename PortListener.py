@@ -39,7 +39,9 @@ def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, user
     # If Visualization->volume renderering
     if subType == "VolumeRendering":
         renderer = vtk.vtkRenderer()
+        renWin = vtk.vtkRenderWindow()
         config.rendererDict[visualizationJobID] = renderer # This keeps the renderer alive for the rest of the operation
+        config.renWinDict[visualizationJobID] = renWin
         imagefile = g.ParseQuery()
 
     if subType == "Rotation":

@@ -95,17 +95,12 @@ class Visualization(object):
         # If Visualization->VolumeRendering
         if self._subType == "VolumeRendering":
             # - Initialize variables
-            if config.renWinDict.has_key(str(self._visualizationJobID)):
-                print config.renWinDict[str(self._visualizationJobID)]
             m_contrastRange = m_parameter
             # - Make a renderer
-            self._VolumeRender(m_contrastRange) # renderer assigned to config.rendererDict
+            imageB = self._VolumeRender(m_contrastRange) # renderer assigned to config.rendererDict
             # - Render the image once (Done in _VolumeRender function)
-
-            m_path = self._GetOutDataDirectory()+"/%s_Initialize.%s"%(self._visualizationJobID, self._outCompressionType)
-            imageB = file(m_path,'rb')
             # - Encode Image File
-            imageB = base64.b64encode(imageB.read())
+            imageB = base64.b64encode(imageB)
             # - return renderer to upper layer
             return imageB
 
@@ -126,13 +121,13 @@ class Visualization(object):
             # config.rendererDict[str(self._visualizationJobID)] = renderer
             # - Render Image
             mp = MainProcess.MainProcess()
-            m_path = self._GetOutDataDirectory()+"/current_"+str(self._visualizationJobID)
+            # m_path = self._GetOutDataDirectory()+"/current_"+str(self._visualizationJobID)
             # TODO: Allow compatibale compression type, remember to change definition for imageB too
 
-            mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, outFileName=(m_path), dimension=config.dimensionDict[self._visualizationJobID])
-            imageB = file(m_path+".%s"%self._outCompressionType,'rb')
+            imageB = mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, dimension=config.dimensionDict[self._visualizationJobID])
+            # imageB = file(m_path+".%s"%self._outCompressionType,'rb') # - Now write to memory directly
             # - Encode Image File
-            imageB = base64.b64encode(imageB.read())
+            imageB = base64.b64encode(imageB)
             return imageB
 
         # If Visualization-> Zoom:
@@ -156,12 +151,10 @@ class Visualization(object):
             config.rendererDict[str(self._visualizationJobID)] = renderer
             # Load Main process module
             mp = MainProcess.MainProcess()
-            m_path = self._GetOutDataDirectory()+"/current_"+str(self._visualizationJobID)
             print camera.GetDistance()
-            mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, outFileName=(m_path), dimension=config.dimensionDict[self._visualizationJobID])
+            imageB = mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, dimension=config.dimensionDict[self._visualizationJobID])
             # - Encode Image file
-            imageB = file(m_path+".%s"%self._outCompressionType, 'rb')
-            imageB = base64.b64encode(imageB.read())
+            imageB = base64.b64encode(imageB)
             return imageB
 
 
@@ -190,10 +183,11 @@ class Visualization(object):
         # Image type check TODO: nii.gz, DICOM, ECAT, finish nii.gz first
         m_imagePathSplitted = m_imagePath.split('.')
         m_suffix = m_imagePathSplitted[-1]
-        # Create rendere first
 
+        # Create rendere first
         renderer = config.rendererDict[str(self._visualizationJobID)]
         renderer.SetBackground(0,0,0)
+
 
         # since nifti might be compressed
         if m_suffix == 'gz':
@@ -240,10 +234,10 @@ class Visualization(object):
             m_volume = mp.VolumeRenderingGPUDICOMLoader(m_reader)
             renderer.AddVolume(m_volume)
 
-
-        m_path = self._GetOutDataDirectory()+"/%s_Initialize"%self._visualizationJobID
-        mp.ImageWriter(renderer, outFileName=m_path, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
-        return
+        renWin = config.renWinDict[str(self._visualizationJobID)]
+        renWin.AddRenderer(renderer)
+        result = mp.ImageWriter(renderer, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
+        return result
 
         #
         # except:

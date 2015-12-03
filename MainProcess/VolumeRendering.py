@@ -91,27 +91,27 @@ def VolumeRenderingGPUDICOMLoader(dicomreader):
     volume.SetProperty(volumeProperty)
 
     # === DEBUG TEST ===
-    renderer = vtk.vtkRenderer()
-    renderer.AddVolume(volume)
-
-
-    print "writing"
-    ImageWriter(renderer, outFileName="tmp1")
-    print "write finish"
-    camera = renderer.GetActiveCamera()
-    camera.Zoom(1.3)
-    camera.Azimuth(40)
-    ImageWriter(renderer, camera=camera, outFileName="tmp2", AAFrames=0)
-    print "write cam1"
-    camera.Zoom(1.3)
-    camera.Azimuth(40)
-    ImageWriter(renderer, camera=camera, outFileName="tmp3", AAFrames=0)
-    print "write cam2"
-    camera.Zoom(1.3)
-    camera.Azimuth(40)
-    ImageWriter(renderer, camera=camera, outFileName="tmp4", AAFrames=0)
-    print "write cam3"
-    renderer.ResetCameraClippingRange()
+    # renderer = vtk.vtkRenderer()
+    # renderer.AddVolume(volume)
+    #
+    #
+    # print "writing"
+    # ImageWriter(renderer, outFileName="tmp1")
+    # print "write finish"
+    # camera = renderer.GetActiveCamera()
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp2", AAFrames=0)
+    # print "write cam1"
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp3", AAFrames=0)
+    # print "write cam2"
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp4", AAFrames=0)
+    # print "write cam3"
+    # renderer.ResetCameraClippingRange()
 
     # === DEBUG TEST ===
     return volume
@@ -168,21 +168,21 @@ def VolumeRenderingDICOMLoader(dicomreader):
     volume.SetProperty(volumeProperty)
 
     # === DEBUG TEST ===
-    renderer = vtk.vtkRenderer()
-    renderer.AddVolume(volume)
-    vdisplay = xvfbwrapper.Xvfb()
-    vdisplay.start()
-
-    print "writing"
-    ImageWriter(renderer, outFileName="tmp1")
-    print "write 1..."
-    camera = renderer.GetActiveCamera()
-    camera.Zoom(1.3)
-    camera.Azimuth(40)
-    ImageWriter(renderer, camera=camera, outFileName="tmp2")
-    print "write 2..."
-    renderer.ResetCameraClippingRange()
-    vdisplay.stop()
+    # renderer = vtk.vtkRenderer()
+    # renderer.AddVolume(volume)
+    # vdisplay = xvfbwrapper.Xvfb()
+    # vdisplay.start()
+    #
+    # print "writing"
+    # ImageWriter(renderer, outFileName="tmp1")
+    # print "write 1..."
+    # camera = renderer.GetActiveCamera()
+    # camera.Zoom(1.3)
+    # camera.Azimuth(40)
+    # ImageWriter(renderer, camera=camera, outFileName="tmp2")
+    # print "write 2..."
+    # renderer.ResetCameraClippingRange()
+    # vdisplay.stop()
     # === DEBUG TEST ===
     return volume
 
@@ -250,7 +250,7 @@ def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThereshold=0, upperTh
     return volume
 
 
-def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tmp", suppress=False,
+def ImageWriter(renderer, camera=None, outCompressionType="jpg", suppress=False,
                 dimension=[400, 400], AAFrames=5):
     """
     Write image from renderer to a figure.
@@ -273,12 +273,12 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tm
     on then you might simply use SetOffScreenRendering(1)/OffScreenRenderingOn() and suppress
     xvfbwrapper through the code by setting config.vdisplay=False
     """
+
     renderWin = vtk.vtkRenderWindow()
     renderWin.AddRenderer(renderer)
-
-    # print renderWin.GetAAFrames()
-    renderWin.SetSize(int(dimension[0]), int(dimension[1]))
     renderWin.OffScreenRenderingOn()
+    renderWin.SetSize(int(dimension[0]), int(dimension[1]))
+
     renderWin.Render()
     renderWin.SetAAFrames(AAFrames)
     # ** Note that rendering does not work with the interactor. **
@@ -293,16 +293,17 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", outFileName="tm
     # Writer the render to image
     if outCompressionType == 'png':
         writer = vtk.vtkPNGWriter()
-        writer.SetFileName(outFileName + ".png")
 
     if outCompressionType == 'jpeg' or outCompressionType == 'jpg':
         writer = vtk.vtkJPEGWriter()
-        writer.SetFileName(outFileName + ".jpg")
 
+
+    writer.SetWriteToMemory(1)
     writer.SetInputConnection(windowToImageFilter.GetOutputPort())
     if suppress == False:
         writer.Write()
-    pass
+        result = writer.GetResult()
+    return result
 
 
 def TestRayCast():
