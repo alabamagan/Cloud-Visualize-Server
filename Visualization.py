@@ -157,9 +157,6 @@ class Visualization(object):
 
         # If Visualization->Translation
 
-
-
-
         return
 
 
@@ -201,7 +198,7 @@ class Visualization(object):
 
             # -- Use function from Main Process.
             mp = MainProcess.MainProcess()
-            m_volume = mp.VolumeRenderingGPURayCast(m_reader, upperThereshold=m_contrastUpper, lowerThereshold=m_contrastLower)
+            m_volume = mp.VolumeRenderingGPURayCast(m_reader, upperThreshold=m_contrastUpper, lowerThreshold=m_contrastLower)
             renderer.AddVolume(m_volume)
 
         # if vtk - Load by vtk methods
@@ -216,7 +213,7 @@ class Visualization(object):
 
         # if DICOM - Load VolumeRenderingDICOMLoader, note that if data is dicom, suffix ".DICOM" show be added to the inDataDirectory
         elif m_suffix == 'DICOM':
-            # TODO: allows user defined thereshold
+            # TODO: allows user defined Threshold
             # -- Construct dicom reader for function in main process
             m_reader = vtk.vtkDICOMImageReader()
             m_reader.SetDataByteOrderToLittleEndian() # TODO: allow user input

@@ -80,8 +80,8 @@ if __name__ == '__main__':
             # lockerfile = file(locker, 'w')
             # lockerfile.write("%s"%os.getpid())
             # lockerfile.close()
-            if not os.path.isdir("/tmp/ram/cldv/%s"%config.pid):
-                os.system("mkdir -p /tmp/ram/cldv/%s"%config.pid)
+            # if not os.path.isdir("/tmp/ram/cldv/%s"%config.pid):
+            #     os.system("mkdir -p /tmp/ram/cldv/%s"%config.pid)
             # if config.vdisplay:
             #     vdisplay = xvfbwrapper.Xvfb()
             #     vdisplay.start()
@@ -89,7 +89,7 @@ if __name__ == '__main__':
         except KeyboardInterrupt:
             http_server.shutdown()
             # os.remove(locker)
-            os.system("rm -rf /tmp/ram/cldv")
+            # os.system("rm -rf /tmp/ram/cldv")
             # if config.vdisplay:
             #     vdisplay.stop()
 
