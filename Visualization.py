@@ -96,6 +96,7 @@ class Visualization(object):
             # - Make a renderer
             imageB = self._VolumeRender(m_contrastRange) # renderer assigned to config.rendererDict
             # - Render the image once (Done in _VolumeRender function)
+
             # - Encode Image File
             imageB = base64.b64encode(imageB)
             # - return renderer to upper layer
@@ -108,12 +109,14 @@ class Visualization(object):
             m_rotationAzimuth, m_rotationElevation = m_parameter
             # - Obtain renderer from upper layer
             renderer = config.rendererDict[str(self._visualizationJobID)]
+            renwin = config.renWinDict[str(self._visualizationJobID)]
             # - Obtain camera from renderer
             camera = renderer.GetActiveCamera()
             # - Rotate according to incomming
             camera.Azimuth(m_rotationAzimuth)
             camera.Elevation(m_rotationElevation)
             camera.OrthogonalizeViewUp()
+            # camera.Zoom(config.cameraZoomStep[str(self._visualizationJobID)])
             # - Update global dict
             # config.rendererDict[str(self._visualizationJobID)] = renderer
             # - Render Image
@@ -121,7 +124,7 @@ class Visualization(object):
             # m_path = self._GetOutDataDirectory()+"/current_"+str(self._visualizationJobID)
             # TODO: Allow compatibale compression type, remember to change definition for imageB too
 
-            imageB = mp.ImageWriter(renderer, camera=camera, outCompressionType=self._outCompressionType, dimension=config.dimensionDict[self._visualizationJobID])
+            imageB = mp.ImageWriter(renderer,camera=camera, suppressRender=False,outCompressionType=self._outCompressionType, dimension=config.dimensionDict[self._visualizationJobID])
             # imageB = file(m_path+".%s"%self._outCompressionType,'rb') # - Now write to memory directly
             # - Encode Image File
             imageB = base64.b64encode(imageB)
@@ -140,8 +143,10 @@ class Visualization(object):
 
             # - Zoom according to zoom factor
             if not m_zoomFactor:
+                config.cameraZoomStep[str(self._visualizationJobID)]*=0.9
                 camera.Zoom(0.9)
             else:
+                config.cameraZoomStep[str(self._visualizationJobID)]*=1/0.9
                 camera.Zoom(1/0.9)
 
             # - Update global dict
@@ -227,7 +232,8 @@ class Visualization(object):
 
         renWin = config.renWinDict[str(self._visualizationJobID)]
         renWin.AddRenderer(renderer)
-        result = mp.ImageWriter(renderer, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
+        result = mp.ImageWriter(renderer, renderWin=renWin, dimension=config.dimensionDict[self._visualizationJobID], outCompressionType=self._outCompressionType)
+        config.cameraZoomStep[str(self._visualizationJobID)] = 1
         return result
 
         #

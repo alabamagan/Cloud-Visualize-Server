@@ -2,6 +2,7 @@
 
 import sys
 import vtk
+import base64
 
 sys.path.append("../")
 import config
@@ -82,7 +83,7 @@ def VolumeRenderingGPUDICOMLoader(dicomreader):
     volumeMapper = vtk.vtkGPUVolumeRayCastMapper()
     volumeMapper.SetInputConnection(imcast.GetOutputPort())
     volumeMapper.SetBlendModeToComposite()
-    volumeMapper.SetSampleDistance(0.1)
+
 
     volume = vtk.vtkVolume()
     volume.SetMapper(volumeMapper)
@@ -250,8 +251,11 @@ def VolumeRenderingGPURayCast(volumereader, scale=None, lowerThreshold=0, upperT
     volumeProperty.SetColor(colorFunc)
     volumeProperty.SetScalarOpacity(alphaChannelFunc)
 
+
     volumeMapper = vtk.vtkGPUVolumeRayCastMapper()
     volumeMapper.SetInputConnection(reader.GetOutputPort())
+    volumeMapper.DebugOn()
+    volumeMapper.ReleaseDataFlagOff()
 
     volume = vtk.vtkVolume()
     volume.SetMapper(volumeMapper)
@@ -313,6 +317,8 @@ def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThreshold=0, upperThr
     volumeMapper = vtk.vtkVolumeRayCastMapper()
     volumeMapper.SetVolumeRayCastFunction(compositeFunction)
     volumeMapper.SetInputConnection(dataImporter.GetOutputPort())
+    volumeMapper.DebugOn()
+    volumeMapper.ReleaseDataFlagOff()
 
     volume = vtk.vtkVolume()
     volume.SetMapper(volumeMapper)
@@ -323,7 +329,7 @@ def VolumeRenderingRayCast(inVolume, scale=[1, 1, 1], lowerThreshold=0, upperThr
     return volume
 
 
-def ImageWriter(renderer, camera=None, outCompressionType="jpg", suppress=False,
+def ImageWriter(renderer, renderWin=None, camera=None, outCompressionType="jpg", suppress=False, suppressRender=False,
                 dimension=[400, 400], AAFrames=5):
     """
     Write image from renderer to a figure.
@@ -346,16 +352,19 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", suppress=False,
     on then you might simply use SetOffScreenRendering(1)/OffScreenRenderingOn() and suppress
     xvfbwrapper through the code by setting config.vdisplay=False
     """
+    if renderWin == None:
+        renderWin = vtk.vtkRenderWindow()
+        renderWin.AddRenderer(renderer)
+        renderWin.Register(renderer)
 
-    renderWin = vtk.vtkRenderWindow()
-    renderWin.AddRenderer(renderer)
-    renderWin.OffScreenRenderingOn()
+    # renderWin.OffScreenRenderingOn()
     renderWin.SetSize(int(dimension[0]), int(dimension[1]))
 
-    renderWin.Render() # TODO: Error for nifti here
-    renderWin.SetAAFrames(AAFrames)
+    if not suppressRender:
+        renderWin.Render() # TODO: Error for nifti here
+    # renderWin.SetAAFrames(AAFrames)
     # ** Note that rendering does not work with the interactor. **
-
+    print renderer.VisibleVolumeCount()
     windowToImageFilter = vtk.vtkWindowToImageFilter()
     windowToImageFilter.SetInput(renderWin)
     windowToImageFilter.Update()
@@ -370,12 +379,13 @@ def ImageWriter(renderer, camera=None, outCompressionType="jpg", suppress=False,
     if outCompressionType == 'jpeg' or outCompressionType == 'jpg':
         writer = vtk.vtkJPEGWriter()
 
-
     writer.SetWriteToMemory(1)
     writer.SetInputConnection(windowToImageFilter.GetOutputPort())
     if suppress == False:
         writer.Write()
         result = writer.GetResult()
+
+    renderWin.Finalize()
     return result
 
 
@@ -465,11 +475,13 @@ def TestGPUVolumeRender():
     reader.SetDataOrigin(0, 0, 0)
     print "test"
     vol = VolumeRenderingGPUDICOMLoader(reader)
-    # renderer = vtk.vtkRenderer()
-    # renderer.AddVolume(vol)
-    # ImageWriter(renderer, outFileName="gg")
-    # renderer.GetActiveCamera().Azimuth(40)
-    # ImageWriter(renderer, outFileName="gg2")
+    renderer = vtk.vtkRenderer()
+    renderer.AddVolume(vol)
+    renwin = vtk.vtkRenderWindow()
+    renwin.AddRenderer(renderer)
+    print base64.b64encode(ImageWriter(renderer, renderWin=renwin))
+    renderer.GetActiveCamera().Azimuth(40)
+    print base64.b64encode(ImageWriter(renderer, renderWin=renwin))
 
 if __name__ == '__main__':
     TestGPUVolumeRender()

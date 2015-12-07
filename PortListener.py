@@ -39,6 +39,7 @@ def Visualize(subType, parameter, subjectID, projectID, imageID, dimension, user
     if subType == "VolumeRendering":
         renderer = vtk.vtkRenderer()
         renWin = vtk.vtkRenderWindow()
+        config.cameraZoomStep[visualizationJobID] = 1 # Set ZoomStep
         config.rendererDict[visualizationJobID] = renderer # This keeps the renderer alive for the rest of the operation
         config.renWinDict[visualizationJobID] = renWin
         imagefile = g.ParseQuery()
@@ -69,7 +70,7 @@ if __name__ == '__main__':
         raise SystemError("Lock file /tmp/clv.pid exist")
     else:
         # Threading HTTP-Server
-        serverIP = '192.168.43.30'
+        serverIP = '137.189.141.216'
         http_server = pyjsonrpc.ThreadingHttpServer(
             server_address = (serverIP, 43876),
             RequestHandlerClass = RequestHandler
